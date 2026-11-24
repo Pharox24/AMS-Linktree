@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Official links and resources for A.M.S Group." />
+  <meta name="theme-color" content="#171414" />
+  <title>A.M.S Group | Official Links</title>
+  <link rel="icon" href="ams-logo.svg" />
+  <style>
+    :root {
+      --ink: #171414;
+      --ink-soft: #292424;
+      --gold: #c89419;
+      --gold-bright: #f5dc72;
+      --cream: #fbf7ed;
+      --paper: #fffdf8;
+      --muted: #756b60;
+      --shadow: 0 32px 90px -34px rgba(0, 0, 0, 0.78);
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+      background: var(--ink);
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding: 28px 18px;
+      display: grid;
+      place-items: center;
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 12% 0%, rgba(200, 148, 25, 0.28), transparent 30%),
+        radial-gradient(circle at 92% 100%, rgba(245, 220, 114, 0.12), transparent 34%),
+        linear-gradient(145deg, #211d1d 0%, #100e0e 100%);
+    }
+
+    .page {
+      width: min(100%, 590px);
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(26px, 7vw, 46px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 30px;
+      background: linear-gradient(160deg, var(--paper), var(--cream));
+      box-shadow: var(--shadow);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 5px;
+      background: linear-gradient(90deg, #9b6b08, var(--gold-bright), #9b6b08);
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .brand img {
+      width: min(100%, 300px);
+      height: auto;
+      margin: 2px auto 4px;
+    }
+
+    .eyebrow {
+      margin: 12px 0 8px;
+      color: #956c0d;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 8vw, 3rem);
+      line-height: 1.03;
+      letter-spacing: -0.035em;
+    }
+
+    .intro {
+      max-width: 40ch;
+      margin: 13px auto 28px;
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+
+    .links {
+      display: grid;
+      gap: 12px;
+    }
+
+    .link {
+      min-height: 64px;
+      display: grid;
+      grid-template-columns: 46px 1fr auto;
+      align-items: center;
+      gap: 14px;
+      padding: 11px 16px 11px 11px;
+      border: 1px solid rgba(245, 220, 114, 0.18);
+      border-radius: 18px;
+      color: var(--paper);
+      background: linear-gradient(135deg, var(--ink-soft), var(--ink));
+      text-decoration: none;
+      box-shadow: 0 12px 28px -22px rgba(0, 0, 0, 0.95);
+      transition: transform 180ms var(--ease), border-color 180ms var(--ease), box-shadow 180ms var(--ease);
+    }
+
+    .link:hover {
+      transform: translateY(-2px);
+      border-color: rgba(245, 220, 114, 0.72);
+      box-shadow: 0 18px 34px -20px rgba(119, 78, 0, 0.72);
+    }
+
+    .link:focus-visible {
+      outline: 3px solid rgba(200, 148, 25, 0.55);
+      outline-offset: 3px;
+    }
+
+    .link__icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(245, 220, 114, 0.25);
+      border-radius: 14px;
+      color: var(--gold-bright);
+      background: rgba(245, 220, 114, 0.08);
+      font-size: 0.92rem;
+      font-weight: 850;
+      letter-spacing: -0.03em;
+    }
+
+    .link__copy {
+      min-width: 0;
+    }
+
+    .link__title,
+    .link__detail {
+      display: block;
+    }
+
+    .link__title {
+      font-weight: 760;
+      line-height: 1.25;
+    }
+
+    .link__detail {
+      margin-top: 3px;
+      overflow: hidden;
+      color: #d6cec2;
+      font-size: 0.78rem;
+      line-height: 1.35;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .link__arrow {
+      color: var(--gold-bright);
+      font-size: 1.2rem;
+      transition: transform 180ms var(--ease);
+    }
+
+    .link:hover .link__arrow {
+      transform: translateX(3px);
+    }
+
+    footer {
+      margin-top: 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    footer strong {
+      color: #7e5b0f;
+    }
+
+    @media (max-width: 420px) {
+      body {
+        padding: 14px;
+      }
+
+      .card {
+        border-radius: 24px;
+      }
+
+      .brand img {
+        width: min(100%, 250px);
+      }
+
+      .link {
+        grid-template-columns: 42px 1fr auto;
+        gap: 11px;
+        padding: 10px 12px 10px 10px;
+      }
+
+      .link__icon {
+        width: 42px;
+        height: 42px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="card" aria-labelledby="page-title">
+      <header class="brand">
+        <img src="ams-logo.svg" alt="A.M.S Group" width="400" height="200" />
+        <p class="eyebrow">A.M.S Group</p>
+        <h1 id="page-title">Official links</h1>
+        <p class="intro">Explore our companies, services, profile, and direct contact channels.</p>
+      </header>
+
+      <nav class="links" aria-label="Official A.M.S Group links">
+        <a class="link" href="https://www.egcss.com" target="_blank" rel="noopener">
+          <span class="link__icon" aria-hidden="true">DC</span>
+          <span class="link__copy">
+            <span class="link__title">EGCSS Drilling Chemicals</span>
+            <span class="link__detail">Company, services and global reach</span>
+          </span>
+          <span class="link__arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a class="link" href="https://www.egcss.com/#portfolio" target="_blank" rel="noopener">
+          <span class="link__icon" aria-hidden="true">A-Z</span>
+          <span class="link__copy">
+            <span class="link__title">Chemical Portfolio</span>
+            <span class="link__detail">Browse the complete product catalogue</span>
+          </span>
+          <span class="link__arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a class="link" href="https://www.egcss.com/EGCSS%20Drilling%20Chemicals%20Company%20Profile%20(Light).pdf" target="_blank" rel="noopener">
+          <span class="link__icon" aria-hidden="true">PDF</span>
+          <span class="link__copy">
+            <span class="link__title">Company Profile</span>
+            <span class="link__detail">Download the EGCSS company profile</span>
+          </span>
+          <span class="link__arrow" aria-hidden="true">↓</span>
+        </a>
+
+        <a class="link" href="https://www.egcss.com/logistics/" target="_blank" rel="noopener">
+          <span class="link__icon" aria-hidden="true">S</span>
+          <span class="link__copy">
+            <span class="link__title">Shipping &amp; Logistics</span>
+            <span class="link__detail">Vessel chartering and global logistics</span>
+          </span>
+          <span class="link__arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a class="link" href="mailto:ceo@egcss.com">
+          <span class="link__icon" aria-hidden="true">@</span>
+          <span class="link__copy">
+            <span class="link__title">Email A.M.S Group</span>
+            <span class="link__detail">ceo@egcss.com</span>
+          </span>
+          <span class="link__arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a class="link" href="tel:+201003046969">
+          <span class="link__icon" aria-hidden="true">TEL</span>
+          <span class="link__copy">
+            <span class="link__title">Call Egypt HQ</span>
+            <span class="link__detail">+20 100 304 6969</span>
+          </span>
+          <span class="link__arrow" aria-hidden="true">→</span>
+        </a>
+      </nav>
+
+      <footer>
+        <strong>ams.egcss.com</strong> · A.M.S Group
+      </footer>
+    </section>
+  </main>
+</body>
+</html>
